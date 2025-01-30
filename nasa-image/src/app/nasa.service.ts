@@ -16,4 +16,9 @@ export class NasaService {
   getImageOfTheDay():Observable<any>{
     return this.http.get(`${this.apiUrl}?api_key=${this.apiKey}`) //comillas invertidas
   }
+
+  getImageByDate(date: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}?api_key=${this.apiKey}&date=${date}`);
+  }
+
 }

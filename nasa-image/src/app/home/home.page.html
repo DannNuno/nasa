@@ -9,11 +9,21 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">imagen del dia NASA</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <ion-content class="ion-padding">
+
+    <!-- forms de fecha -->
+    <ion-item>
+      <ion-datetime 
+        [value]="selectedDate" 
+        (ionChange)="onDateChange($event)" 
+        display-format="YYYY-MM-DD">
+      </ion-datetime>
+    </ion-item>
+
     <ng-container *ngIf="imageData; else loading">
       <ion-card>
         <img [src]="imageData.url" alt="NASA image of the day" />
